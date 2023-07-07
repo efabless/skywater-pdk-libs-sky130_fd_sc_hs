@@ -30,7 +30,7 @@
 `default_nettype none
 
 // Import sub cells.
-`include "../u_vpwr_vgnd/sky130_fd_sc_hs__u_vpwr_vgnd.v"
+`include "../../models/udp_pwrgood_pp_pg/sky130_fd_sc_hs__udp_pwrgood_pp_pg.v"
 
 `celldefine
 module sky130_fd_sc_hs__ha (
@@ -52,17 +52,17 @@ module sky130_fd_sc_hs__ha (
 
     // Local signals
     wire      and0_out_COUT        ;
-    wire      u_vpwr_vgnd0_out_COUT;
+    wire      udp_pwrgood_pp$PG0_out_COUT;
     wire      xor0_out_SUM         ;
-    wire      u_vpwr_vgnd1_out_SUM ;
+    wire      udp_pwrgood_pp$PG1_out_SUM ;
 
     //                           Name          Output                 Other arguments
     and                          and0         (and0_out_COUT        , A, B                     );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd0 (u_vpwr_vgnd0_out_COUT, and0_out_COUT, VPWR, VGND);
-    buf                          buf0         (COUT                 , u_vpwr_vgnd0_out_COUT    );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG0 (udp_pwrgood_pp$PG0_out_COUT, and0_out_COUT, VPWR, VGND);
+    buf                          buf0         (COUT                 , udp_pwrgood_pp$PG0_out_COUT    );
     xor                          xor0         (xor0_out_SUM         , B, A                     );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd1 (u_vpwr_vgnd1_out_SUM , xor0_out_SUM, VPWR, VGND );
-    buf                          buf1         (SUM                  , u_vpwr_vgnd1_out_SUM     );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG1 (udp_pwrgood_pp$PG1_out_SUM , xor0_out_SUM, VPWR, VGND );
+    buf                          buf1         (SUM                  , udp_pwrgood_pp$PG1_out_SUM     );
 
 endmodule
 `endcelldefine

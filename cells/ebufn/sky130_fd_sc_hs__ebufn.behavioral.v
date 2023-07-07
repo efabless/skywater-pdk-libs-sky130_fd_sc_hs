@@ -30,7 +30,7 @@
 `default_nettype none
 
 // Import sub cells.
-`include "../u_vpwr_vgnd/sky130_fd_sc_hs__u_vpwr_vgnd.v"
+`include "../../models/udp_pwrgood_pp_pg/sky130_fd_sc_hs__udp_pwrgood_pp_pg.v"
 
 `celldefine
 module sky130_fd_sc_hs__ebufn (
@@ -49,13 +49,13 @@ module sky130_fd_sc_hs__ebufn (
     input  VGND;
 
     // Local signals
-    wire u_vpwr_vgnd0_out_A  ;
-    wire u_vpwr_vgnd1_out_teb;
+    wire udp_pwrgood_pp$PG0_out_A  ;
+    wire udp_pwrgood_pp$PG1_out_teb;
 
     //                           Name          Output                Other arguments
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd0 (u_vpwr_vgnd0_out_A  , A, VPWR, VGND                           );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd1 (u_vpwr_vgnd1_out_teb, TE_B, VPWR, VGND                        );
-    bufif0                       bufif00      (Z                   , u_vpwr_vgnd0_out_A, u_vpwr_vgnd1_out_teb);
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG0 (udp_pwrgood_pp$PG0_out_A  , A, VPWR, VGND                           );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG1 (udp_pwrgood_pp$PG1_out_teb, TE_B, VPWR, VGND                        );
+    bufif0                       bufif00      (Z                   , udp_pwrgood_pp$PG0_out_A, udp_pwrgood_pp$PG1_out_teb);
 
 endmodule
 `endcelldefine
