@@ -30,7 +30,7 @@
 `default_nettype none
 
 // Import sub cells.
-`include "../u_vpwr_vgnd/sky130_fd_sc_hs__u_vpwr_vgnd.v"
+`include "../../models/udp_pwrgood_pp_pg/sky130_fd_sc_hs__udp_pwrgood_pp_pg.v"
 `include "../u_mux_4/sky130_fd_sc_hs__u_mux_4.v"
 
 `celldefine
@@ -59,12 +59,12 @@ module sky130_fd_sc_hs__mux4 (
 
     // Local signals
     wire    u_mux_40_out_X    ;
-    wire    u_vpwr_vgnd0_out_X;
+    wire    udp_pwrgood_pp$PG0_out_X;
 
     //                           Name          Output              Other arguments
     sky130_fd_sc_hs__u_mux_4_2   u_mux_40     (u_mux_40_out_X    , A0, A1, A2, A3, S0, S1    );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd0 (u_vpwr_vgnd0_out_X, u_mux_40_out_X, VPWR, VGND);
-    buf                          buf0         (X                 , u_vpwr_vgnd0_out_X        );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG0 (udp_pwrgood_pp$PG0_out_X, u_mux_40_out_X, VPWR, VGND);
+    buf                          buf0         (X                 , udp_pwrgood_pp$PG0_out_X        );
 
 endmodule
 `endcelldefine

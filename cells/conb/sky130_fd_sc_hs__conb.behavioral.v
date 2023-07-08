@@ -30,7 +30,7 @@
 `default_nettype none
 
 // Import sub cells.
-`include "../u_vpwr_vgnd/sky130_fd_sc_hs__u_vpwr_vgnd.v"
+`include "../../models/udp_pwrgood_pp_pg/sky130_fd_sc_hs__udp_pwrgood_pp_pg.v"
 
 `celldefine
 module sky130_fd_sc_hs__conb (
@@ -51,7 +51,7 @@ module sky130_fd_sc_hs__conb (
 
     //                           Name          Output          Other arguments
     pullup                       pullup0      (pullup0_out_HI);
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd0 (HI            , pullup0_out_HI, VPWR, VGND);
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG0 (HI            , pullup0_out_HI, VPWR, VGND);
     pulldown                     pulldown0    (LO            );
 
 endmodule

@@ -30,7 +30,7 @@
 `default_nettype none
 
 // Import sub cells.
-`include "../u_vpwr_vgnd/sky130_fd_sc_hs__u_vpwr_vgnd.v"
+`include "../../models/udp_pwrgood_pp_pg/sky130_fd_sc_hs__udp_pwrgood_pp_pg.v"
 
 `celldefine
 module sky130_fd_sc_hs__fahcon (
@@ -54,23 +54,23 @@ module sky130_fd_sc_hs__fahcon (
 
     // Local signals
     wire xor0_out_SUM          ;
-    wire u_vpwr_vgnd0_out_SUM  ;
+    wire udp_pwrgood_pp$PG0_out_SUM  ;
     wire a_b                   ;
     wire a_ci                  ;
     wire b_ci                  ;
     wire or0_out_coutn         ;
-    wire u_vpwr_vgnd1_out_coutn;
+    wire udp_pwrgood_pp$PG1_out_coutn;
 
     //                           Name          Output                  Other arguments
     xor                          xor0         (xor0_out_SUM          , A, B, CI                 );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd0 (u_vpwr_vgnd0_out_SUM  , xor0_out_SUM, VPWR, VGND );
-    buf                          buf0         (SUM                   , u_vpwr_vgnd0_out_SUM     );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG0 (udp_pwrgood_pp$PG0_out_SUM  , xor0_out_SUM, VPWR, VGND );
+    buf                          buf0         (SUM                   , udp_pwrgood_pp$PG0_out_SUM     );
     nor                          nor0         (a_b                   , A, B                     );
     nor                          nor1         (a_ci                  , A, CI                    );
     nor                          nor2         (b_ci                  , B, CI                    );
     or                           or0          (or0_out_coutn         , a_b, a_ci, b_ci          );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd1 (u_vpwr_vgnd1_out_coutn, or0_out_coutn, VPWR, VGND);
-    buf                          buf1         (COUT_N                , u_vpwr_vgnd1_out_coutn   );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG1 (udp_pwrgood_pp$PG1_out_coutn, or0_out_coutn, VPWR, VGND);
+    buf                          buf1         (COUT_N                , udp_pwrgood_pp$PG1_out_coutn   );
 
 endmodule
 `endcelldefine

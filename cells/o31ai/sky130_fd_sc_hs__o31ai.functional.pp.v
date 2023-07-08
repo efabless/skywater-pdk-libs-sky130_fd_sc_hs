@@ -32,7 +32,7 @@
 `default_nettype none
 
 // Import sub cells.
-`include "../u_vpwr_vgnd/sky130_fd_sc_hs__u_vpwr_vgnd.v"
+`include "../../models/udp_pwrgood_pp_pg/sky130_fd_sc_hs__udp_pwrgood_pp_pg.v"
 
 `celldefine
 module sky130_fd_sc_hs__o31ai (
@@ -57,13 +57,13 @@ module sky130_fd_sc_hs__o31ai (
     // Local signals
     wire	B1 or0_out           ;
     wire    nand0_out_Y       ;
-    wire    u_vpwr_vgnd0_out_Y;
+    wire    udp_pwrgood_pp$PG0_out_Y;
 
     //                           Name          Output              Other arguments
     or                           or0          (or0_out           , A2, A1, A3             );
     nand                         nand0        (nand0_out_Y       , B1, or0_out            );
-    sky130_fd_sc_hs__u_vpwr_vgnd u_vpwr_vgnd0 (u_vpwr_vgnd0_out_Y, nand0_out_Y, VPWR, VGND);
-    buf                          buf0         (Y                 , u_vpwr_vgnd0_out_Y     );
+    sky130_fd_sc_hs__udp_pwrgood_pp$PG udp_pwrgood_pp$PG0 (udp_pwrgood_pp$PG0_out_Y, nand0_out_Y, VPWR, VGND);
+    buf                          buf0         (Y                 , udp_pwrgood_pp$PG0_out_Y     );
 
 endmodule
 `endcelldefine
