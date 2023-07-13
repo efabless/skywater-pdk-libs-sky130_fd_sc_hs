@@ -84,6 +84,18 @@ MACRO sky130_fd_sc_hs__a31o_2
     DIRECTION INOUT ;
     USE GROUND ;
     PORT
+    END
+  END VNB
+  PIN VPB
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+    END
+  END VPB
+  PIN VNB
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
       LAYER met1 ;
         RECT 0.000000 0.000000 0.250000 0.250000 ;
     END
