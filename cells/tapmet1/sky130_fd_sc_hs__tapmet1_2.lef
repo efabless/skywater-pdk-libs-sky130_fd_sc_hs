@@ -37,6 +37,18 @@ MACRO sky130_fd_sc_hs__tapmet1_2
     DIRECTION INOUT ;
     USE GROUND ;
     PORT
+    END
+  END VNB
+  PIN VPB
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+    END
+  END VPB
+  PIN VNB
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
       LAYER met1 ;
         RECT 0.080000 0.425000 0.400000 0.685000 ;
     END

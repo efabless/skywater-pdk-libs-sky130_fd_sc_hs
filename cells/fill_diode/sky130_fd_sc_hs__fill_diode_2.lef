@@ -38,6 +38,18 @@ MACRO sky130_fd_sc_hs__fill_diode_2
     DIRECTION INOUT ;
     USE GROUND ;
     PORT
+    END
+  END VNB
+  PIN VPB
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+    END
+  END VPB
+  PIN VNB
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
       LAYER pwell ;
         RECT 0.000000 0.000000 0.960000 0.245000 ;
     END
