@@ -49,7 +49,7 @@ module sky130_fd_sc_hs__and2b (
     input  B   ;
 
     // Local signals
-    wire	X not0_out          ;
+    wire   not0_out          ;
     wire   and0_out_X        ;
     wire   udp_pwrgood_pp$PG0_out_X;
 

@@ -59,9 +59,9 @@ module sky130_fd_sc_hs__a222oi (
     input  VGND;
 
     // Local signals
-    wire	B2 nand0_out         ;
-    wire	B2 nand1_out         ;
-    wire	B2 nand2_out         ;
+    wire    nand0_out         ;
+    wire    nand1_out         ;
+    wire    nand2_out         ;
     wire    and0_out_Y        ;
     wire    udp_pwrgood_pp$PG0_out_Y;
 

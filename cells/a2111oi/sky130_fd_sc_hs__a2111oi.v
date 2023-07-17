@@ -37,7 +37,7 @@
 `ifdef FUNCTIONAL
 `include "sky130_fd_sc_hs__a2111oi.functional.pp.v"
 `else  // FUNCTIONAL
-`include "sky130_fd_sc_hs__a2111oi.behavioral.pp.v"
+`include "sky130_fd_sc_hs__a2111oi.timing.pp.v"
 `endif // FUNCTIONAL
 
 `else  // USE_POWER_PINS
@@ -45,7 +45,7 @@
 `ifdef FUNCTIONAL
 `include "sky130_fd_sc_hs__a2111oi.functional.v"
 `else  // FUNCTIONAL
-`include "sky130_fd_sc_hs__a2111oi.behavioral.v"
+`include "sky130_fd_sc_hs__a2111oi.timing.v"
 `endif // FUNCTIONAL
 
 `endif // USE_POWER_PINS

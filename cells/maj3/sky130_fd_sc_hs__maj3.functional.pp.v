@@ -51,8 +51,8 @@ module sky130_fd_sc_hs__maj3 (
     input  C   ;
 
     // Local signals
-    wire	csi_opt_296, and0_out          ;
-    wire	csi_opt_296, and1_out          ;
+    wire              and0_out          ;
+    wire              and1_out          ;
     wire              or0_out           ;
     wire              or1_out_X         ;
     wire              udp_pwrgood_pp$PG0_out_X;

@@ -49,9 +49,9 @@ module sky130_fd_sc_hs__dlxtn (
     input  GATE_N;
 
     // Local signals
-    wire	gate buf_Q         ;
-    wire	gate GATE_N_delayed;
-    wire	gate D_delayed     ;
+    wire      buf_Q         ;
+    wire      GATE_N_delayed;
+    wire      D_delayed     ;
     wire      GATE          ;
 
     //                         Name        Output  Other arguments

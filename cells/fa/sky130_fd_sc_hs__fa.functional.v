@@ -53,11 +53,11 @@ module sky130_fd_sc_hs__fa (
     input  CIN ;
 
     // Local signals
-    wire	CIN          or0_out              ;
-    wire	CIN          and0_out             ;
-    wire	CIN          and1_out             ;
-    wire	csi_opt_276, nor0_out             ;
-    wire	csi_opt_276, nor1_out             ;
+    wire              or0_out              ;
+    wire              and0_out             ;
+    wire              and1_out             ;
+    wire              nor0_out             ;
+    wire              nor1_out             ;
     wire              or1_out_COUT         ;
     wire              udp_pwrgood_pp$PG0_out_COUT;
     wire              and2_out             ;

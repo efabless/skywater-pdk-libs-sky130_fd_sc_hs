@@ -21,11 +21,11 @@ specify
 ( negedge SET_B => ( Q_N +: SET_B ) ) = 0:0:0 ;  // delay is tris
 ( posedge CLK => ( Q : CLK ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are tris , tfall
 ( posedge CLK => ( Q_N : CLK ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are tris , tfall
-$recrem ( posedge SET_B , posedge CLK , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , SETB_delayed , CLK_delayed ) ;
-$setuphold ( posedge CLK , posedge D , 0:0:0 , 0:0:0 , notifier , COND0 , COND0 , CLK_delayed , D_delayed ) ;
-$setuphold ( posedge CLK , negedge D , 0:0:0 , 0:0:0 , notifier , COND0 , COND0 , CLK_delayed , D_delayed ) ;
-$width ( posedge CLK &&& COND1 , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge CLK &&& COND1 , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge SET_B &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( posedge SET_B &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
+$recrem ( posedge SET_B , posedge CLK , 0:0:0 , 0:0:0 , notifier , awake , awake , SET_B_delayed , CLK_delayed ) ;
+$setuphold ( posedge CLK , posedge D , 0:0:0 , 0:0:0 , notifier , cond0 , cond0 , CLK_delayed , D_delayed ) ;
+$setuphold ( posedge CLK , negedge D , 0:0:0 , 0:0:0 , notifier , cond0 , cond0 , CLK_delayed , D_delayed ) ;
+$width ( posedge CLK &&& cond1 , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge CLK &&& cond1 , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge SET_B &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( posedge SET_B &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
 endspecify

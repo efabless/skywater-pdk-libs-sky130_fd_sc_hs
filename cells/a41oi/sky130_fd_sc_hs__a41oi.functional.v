@@ -57,7 +57,7 @@ module sky130_fd_sc_hs__a41oi (
     input  B1  ;
 
     // Local signals
-    wire	A4 and0_out          ;
+    wire    and0_out          ;
     wire    nor0_out_Y        ;
     wire    udp_pwrgood_pp$PG0_out_Y;
 

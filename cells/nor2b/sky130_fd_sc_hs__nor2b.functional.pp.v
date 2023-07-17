@@ -51,7 +51,7 @@ module sky130_fd_sc_hs__nor2b (
     input  B_N ;
 
     // Local signals
-    wire	Y not0_out          ;
+    wire   not0_out          ;
     wire   and0_out_Y        ;
     wire   udp_pwrgood_pp$PG0_out_Y;
 
