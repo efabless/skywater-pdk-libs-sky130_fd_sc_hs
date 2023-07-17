@@ -55,8 +55,8 @@ module sky130_fd_sc_hs__o22ai (
     input  B2  ;
 
     // Local signals
-    wire	B2 nor0_out          ;
-    wire	B2 nor1_out          ;
+    wire    nor0_out          ;
+    wire    nor1_out          ;
     wire    or0_out_Y         ;
     wire    udp_pwrgood_pp$PG0_out_Y;
 

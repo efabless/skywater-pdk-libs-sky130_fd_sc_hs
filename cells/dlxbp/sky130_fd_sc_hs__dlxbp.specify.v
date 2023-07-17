@@ -21,8 +21,8 @@ specify
 ( D -=> Q_N ) = ( 0:0:0 , 0:0:0 ) ;  // delays are tris , tfall
 ( posedge GATE => ( Q +: D ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are tris , tfall
 ( posedge GATE => ( Q_N -: D ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are  tris , tfall
-$width ( posedge GATE &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge GATE &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$setuphold ( negedge GATE , posedge D , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , GATE_delayed , D_delayed ) ;
-$setuphold ( negedge GATE , negedge D , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , GATE_delayed , D_delayed ) ;
+$width ( posedge GATE &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge GATE &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$setuphold ( negedge GATE , posedge D , 0:0:0 , 0:0:0 , notifier , awake , awake , GATE_delayed , D_delayed ) ;
+$setuphold ( negedge GATE , negedge D , 0:0:0 , 0:0:0 , notifier , awake , awake , GATE_delayed , D_delayed ) ;
 endspecify

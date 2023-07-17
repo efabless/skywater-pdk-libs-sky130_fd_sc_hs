@@ -53,7 +53,7 @@ module sky130_fd_sc_hs__and4b (
     input  D   ;
 
     // Local signals
-    wire	D not0_out          ;
+    wire   not0_out          ;
     wire   and0_out_X        ;
     wire   udp_pwrgood_pp$PG0_out_X;
 

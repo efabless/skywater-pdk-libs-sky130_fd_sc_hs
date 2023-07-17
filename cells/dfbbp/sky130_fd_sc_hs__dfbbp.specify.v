@@ -23,18 +23,18 @@ specify
 ( SET_B => ( Q_N +: SET_B ) ) = ( 0:0:0 , 0:0:0 ) ;      // delay is tris , tfall
 ( posedge CLK => ( Q +: D ) ) = ( 0:0:0 , 0:0:0 ) ;  // delays are tris , tfall
 ( posedge CLK => ( Q_N -: D ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are tris , tfall
-$recrem ( posedge SET_B , posedge CLK , 0:0:0 , 0:0:0 , notifier , COND0 , COND0 , SETB_delayed , CLK_delayed ) ;
-$recrem ( posedge RESET_B , posedge CLK , 0:0:0 , 0:0:0 , notifier , COND1 , COND1 , RESETB_delayed , CLK_delayed ) ;
-$setuphold ( posedge CLK , posedge D , 0:0:0 , 0:0:0 , notifier , CONDB , CONDB , CLK_delayed , D_delayed ) ;
-$setuphold ( posedge CLK , negedge D , 0:0:0 , 0:0:0 , notifier , CONDB , CONDB , CLK_delayed , D_delayed ) ;
-$hold ( posedge SET_B &&& AWAKE , posedge RESET_B &&& AWAKE , 3.0:3.0:3.0 , notifier ) ; //arbitrary , uncharacterized value to
+$recrem ( posedge SET_B , posedge CLK , 0:0:0 , 0:0:0 , notifier , cond0 , cond0 , SET_B_delayed , CLK_delayed ) ;
+$recrem ( posedge RESET_B , posedge CLK , 0:0:0 , 0:0:0 , notifier , cond1 , cond1 , RESET_B_delayed , CLK_delayed ) ;
+$setuphold ( posedge CLK , posedge D , 0:0:0 , 0:0:0 , notifier , condb , condb , CLK_delayed , D_delayed ) ;
+$setuphold ( posedge CLK , negedge D , 0:0:0 , 0:0:0 , notifier , condb , condb , CLK_delayed , D_delayed ) ;
+$hold ( posedge SET_B &&& awake , posedge RESET_B &&& awake , 3.0:3.0:3.0 , notifier ) ; //arbitrary , uncharacterized value to
 //flag possible state error
-$hold ( posedge RESET_B &&& AWAKE , posedge SET_B &&& AWAKE , 3.0:3.0:3.0 , notifier ) ; //arbitrary , uncharacterized value to
+$hold ( posedge RESET_B &&& awake , posedge SET_B &&& awake , 3.0:3.0:3.0 , notifier ) ; //arbitrary , uncharacterized value to
 //flag possible state error
-$width ( negedge CLK &&& CONDB , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( posedge CLK &&& CONDB , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge SET_B &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( posedge SET_B &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge RESET_B &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( posedge RESET_B &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge CLK &&& condb , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( posedge CLK &&& condb , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge SET_B &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( posedge SET_B &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge RESET_B &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( posedge RESET_B &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
 endspecify

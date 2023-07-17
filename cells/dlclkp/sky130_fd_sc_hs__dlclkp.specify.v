@@ -18,8 +18,8 @@
 
 specify
 ( CLK +=> GCLK ) = ( 0:0:0 , 0:0:0 ) ;                         // delays are tris , tfall
-$width ( posedge CLK &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge CLK &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$setuphold ( posedge CLK , posedge GATE , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , CLK_delayed , GATE_delayed ) ;
-$setuphold ( posedge CLK , negedge GATE , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , CLK_delayed , GATE_delayed ) ;
+$width ( posedge CLK &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge CLK &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$setuphold ( posedge CLK , posedge GATE , 0:0:0 , 0:0:0 , notifier , awake , awake , CLK_delayed , GATE_delayed ) ;
+$setuphold ( posedge CLK , negedge GATE , 0:0:0 , 0:0:0 , notifier , awake , awake , CLK_delayed , GATE_delayed ) ;
 endspecify

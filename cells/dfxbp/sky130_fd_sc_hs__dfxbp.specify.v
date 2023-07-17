@@ -19,8 +19,8 @@
 specify
 ( posedge CLK => ( Q : CLK ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are tris , tfall
 ( posedge CLK => ( Q_N : CLK ) ) = ( 0:0:0 , 0:0:0 ) ; // delays are tris , tfall
-$width ( posedge CLK &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$width ( negedge CLK &&& AWAKE , 1.0:1.0:1.0 , 0 , notifier ) ;
-$setuphold ( posedge CLK , posedge D , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , CLK_delayed , D_delayed ) ;
-$setuphold ( posedge CLK , negedge D , 0:0:0 , 0:0:0 , notifier , AWAKE , AWAKE , CLK_delayed , D_delayed ) ;
+$width ( posedge CLK &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$width ( negedge CLK &&& awake , 1.0:1.0:1.0 , 0 , notifier ) ;
+$setuphold ( posedge CLK , posedge D , 0:0:0 , 0:0:0 , notifier , awake , awake , CLK_delayed , D_delayed ) ;
+$setuphold ( posedge CLK , negedge D , 0:0:0 , 0:0:0 , notifier , awake , awake , CLK_delayed , D_delayed ) ;
 endspecify
