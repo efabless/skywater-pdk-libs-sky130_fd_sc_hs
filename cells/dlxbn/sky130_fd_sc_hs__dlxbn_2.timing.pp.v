@@ -57,7 +57,6 @@ module sky130_fd_sc_hs__dlxbn_2 (
     wire D_delayed     ;
     reg  notifier      ;
     wire awake         ;
-    wire 1             ;
 
     //                            Name           Output  Other arguments
     not                           not0          (GATE  , GATE_N_delayed                       );
